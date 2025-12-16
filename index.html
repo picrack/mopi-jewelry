@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOPI Jewelry - Joyería de Plata Ley 925</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo-circle">🦉</div>
+                <div>
+                    <h1 class="logo-title">MOPI</h1>
+                    <p class="logo-subtitle">JEWELRY</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="icon-btn" aria-label="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+                <a href="https://www.instagram.com/mopi.jewelry" target="_blank" rel="noopener noreferrer" class="icon-btn">
+                    <i data-lucide="instagram"></i>
+                </a>
+                <button id="cartButton" class="icon-btn cart-btn">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cartBadge" class="cart-badge hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2 class="hero-title">Joyería de Plata Ley 925</h2>
+            <p class="hero-subtitle">Diseños únicos y elegantes para cada ocasión ✨</p>
+            <p class="hero-info">💎 Efectivo/transferencia • Entregas en todo Chile</p>
+            <button class="btn-primary" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">
+                Ver Catálogo
+            </button>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <h3 class="catalog-title">Nuestros Aretes</h3>
+            <div id="productGrid" class="product-grid"></div>
+        </div>
+    </section>
+
+    <!-- Carrito Lateral -->
+    <div id="cartSidebar" class="cart-sidebar hidden">
+        <div class="cart-overlay" onclick="closeCart()"></div>
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h3 id="cartTitle">Tu Carrito</h3>
+                <button onclick="closeCart()" class="icon-btn">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="cart-body" id="cartBody">
+                <!-- Contenido dinámico -->
+            </div>
+            
+            <div class="cart-footer" id="cartFooter">
+                <!-- Footer dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h3>MOPI JEWELRY</h3>
+                <p>Joyería de Plata Ley 925</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/mopi.jewelry" target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="instagram"></i>
+                </a>
+            </div>
+            <p class="footer-copy">© 2024 MOPI Jewelry. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar íconos de Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
