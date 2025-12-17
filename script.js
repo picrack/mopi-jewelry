@@ -5,42 +5,78 @@ const products = [
         name: "Aretes Estrella Circón",
         price: 12500,
         image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80",
-        description: "Elegantes aretes con circón brillante en forma de estrella"
+        images: [
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80"
+        ],
+        description: "Elegantes aretes con circón brillante en forma de estrella",
+        fullDescription: "Estos hermosos aretes en forma de estrella están elaborados en plata ley 925 con un brillante circón en el centro. Perfectos para cualquier ocasión, combinan elegancia y delicadeza. El diseño estrella simboliza guía y brillo, ideal para destacar tu personalidad única."
     },
     {
         id: 2,
         name: "Aretes Aro Minimalistas",
         price: 8900,
         image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=500&q=80",
-        description: "Aros pequeños y delicados para uso diario"
+        images: [
+            "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=800&q=80",
+            "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=800&q=80",
+            "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=800&q=80"
+        ],
+        description: "Aros pequeños y delicados para uso diario",
+        fullDescription: "Aros minimalistas en plata ley 925, diseñados para el uso diario. Su tamaño pequeño y delicado los hace perfectos para cualquier outfit, desde casual hasta formal. Livianos y cómodos, podrás usarlos todo el día sin molestias."
     },
     {
         id: 3,
         name: "Aretes Colgantes Gota",
         price: 15900,
         image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80",
-        description: "Aretes largos con diseño de gota, perfectos para ocasiones especiales"
+        images: [
+            "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
+            "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
+            "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80"
+        ],
+        description: "Aretes largos con diseño de gota, perfectos para ocasiones especiales",
+        fullDescription: "Elegantes aretes colgantes en plata ley 925 con diseño de gota. Su longitud perfecta los hace ideales para eventos especiales, cenas románticas o celebraciones. El movimiento al caminar les da un toque de sofisticación y glamour."
     },
     {
         id: 4,
         name: "Aretes Circón Solitario",
         price: 10500,
         image: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=500&q=80",
-        description: "Clásicos aretes con circón solitario brillante"
+        images: [
+            "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80",
+            "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80",
+            "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80"
+        ],
+        description: "Clásicos aretes con circón solitario brillante",
+        fullDescription: "Clásico atemporal: aretes solitarios con circón en plata ley 925. Un diseño que nunca pasa de moda, perfecto para quienes buscan elegancia simple y sofisticación. El brillo del circón capta la luz de forma hermosa, añadiendo ese toque especial a tu look."
     },
     {
         id: 5,
         name: "Aretes Aro Medianos",
         price: 11900,
-        image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=500&q=80",
-        description: "Aros medianos versátiles para cualquier ocasión"
+        image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80",
+            "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80",
+            "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80"
+        ],
+        description: "Aros medianos versátiles para cualquier ocasión",
+        fullDescription: "Aros medianos en plata ley 925, el equilibrio perfecto entre discreto y llamativo. Versátiles para cualquier ocasión, desde el trabajo hasta una salida con amigos. Su tamaño medio los hace ideales para quienes buscan presencia sin exagerar."
     },
     {
         id: 6,
         name: "Aretes Corazón",
         price: 13500,
         image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&q=80",
-        description: "Románticos aretes en forma de corazón con detalle brillante"
+        images: [
+            "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+            "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+            "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80"
+        ],
+        description: "Románticos aretes en forma de corazón con detalle brillante",
+        fullDescription: "Aretes en forma de corazón en plata ley 925 con detalles brillantes. Símbolo universal del amor, perfectos como regalo especial o para consentirte a ti misma. El diseño delicado combina romanticismo con elegancia moderna."
     }
 ];
 
@@ -65,14 +101,14 @@ function formatPrice(price) {
 function renderProducts() {
     const grid = document.getElementById('productGrid');
     grid.innerHTML = products.map(product => `
-        <div class="product-card">
+        <div class="product-card" onclick="openProductDetail(${product.id})">
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <h4 class="product-name">${product.name}</h4>
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
                     <span class="product-price">${formatPrice(product.price)}</span>
-                    <button class="btn-add-cart" onclick="addToCart(${product.id})">
+                    <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart(${product.id})">
                         <i data-lucide="shopping-cart" style="width: 18px; height: 18px;"></i>
                         <span>Agregar</span>
                     </button>
@@ -351,3 +387,138 @@ if (localStorage.getItem('darkMode') === 'true') {
 // Inicializar
 renderProducts();
 updateCart();
+
+// Página de detalle del producto
+let currentProductDetailImage = 0;
+
+function openProductDetail(productId) {
+    const product = products.find(p => p.id === productId);
+    currentProductDetailImage = 0;
+    
+    // Ocultar catálogo y hero
+    document.getElementById('catalogo').classList.add('hidden');
+    document.querySelector('.hero').classList.add('hidden');
+    
+    // Mostrar página de detalle
+    const detailPage = document.getElementById('productDetailPage');
+    const detailContent = document.getElementById('productDetailContent');
+    
+    detailContent.innerHTML = `
+        <div class="product-detail-container">
+            <div class="product-detail-gallery">
+                <div class="main-image-container">
+                    <img id="detailMainImage" src="${product.images[0]}" alt="${product.name}" class="detail-main-image">
+                    ${product.images.length > 1 ? `
+                        <button class="gallery-nav gallery-prev" onclick="changeDetailImage(${productId}, -1)">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav gallery-next" onclick="changeDetailImage(${productId}, 1)">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    ` : ''}
+                </div>
+                ${product.images.length > 1 ? `
+                    <div class="thumbnail-container">
+                        ${product.images.map((img, idx) => `
+                            <img src="${img}" alt="${product.name}" 
+                                class="thumbnail ${idx === 0 ? 'active' : ''}" 
+                                onclick="selectDetailImage(${productId}, ${idx})">
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+            <div class="product-detail-info">
+                <h2 class="detail-product-name">${product.name}</h2>
+                <p class="detail-product-price">${formatPrice(product.price)}</p>
+                <div class="detail-product-description">
+                    <h3>Descripción</h3>
+                    <p>${product.fullDescription}</p>
+                </div>
+                <div class="detail-product-features">
+                    <h3>Características</h3>
+                    <ul>
+                        <li>✨ Plata Ley 925</li>
+                        <li>💎 Diseño único y elegante</li>
+                        <li>📦 Envío a todo Chile</li>
+                        <li>✅ Garantía de autenticidad</li>
+                    </ul>
+                </div>
+                <button class="btn-detail-add-cart" onclick="addToCart(${product.id})">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Agregar al Carrito - ${formatPrice(product.price)}</span>
+                </button>
+            </div>
+        </div>
+    `;
+    
+    detailPage.classList.remove('hidden');
+    
+    // Cambiar URL sin recargar
+    window.history.pushState({ productId }, '', `#producto-${productId}`);
+    
+    // Scroll al inicio
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    lucide.createIcons();
+}
+
+function closeProductDetail() {
+    // Mostrar catálogo y hero
+    document.getElementById('catalogo').classList.remove('hidden');
+    document.querySelector('.hero').classList.remove('hidden');
+    
+    // Ocultar página de detalle
+    document.getElementById('productDetailPage').classList.add('hidden');
+    
+    // Volver a URL principal
+    window.history.pushState({}, '', window.location.pathname);
+    
+    // Scroll al catálogo
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+}
+
+function changeDetailImage(productId, direction) {
+    const product = products.find(p => p.id === productId);
+    currentProductDetailImage = (currentProductDetailImage + direction + product.images.length) % product.images.length;
+    
+    const mainImage = document.getElementById('detailMainImage');
+    mainImage.src = product.images[currentProductDetailImage];
+    
+    // Update thumbnails
+    document.querySelectorAll('.thumbnail').forEach((thumb, idx) => {
+        thumb.classList.toggle('active', idx === currentProductDetailImage);
+    });
+}
+
+function selectDetailImage(productId, index) {
+    currentProductDetailImage = index;
+    const product = products.find(p => p.id === productId);
+    
+    const mainImage = document.getElementById('detailMainImage');
+    mainImage.src = product.images[index];
+    
+    // Update thumbnails
+    document.querySelectorAll('.thumbnail').forEach((thumb, idx) => {
+        thumb.classList.toggle('active', idx === index);
+    });
+}
+
+// Manejar botón atrás del navegador
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.productId) {
+        openProductDetail(event.state.productId);
+    } else {
+        closeProductDetail();
+    }
+});
+
+// Cargar producto desde URL al inicio
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#producto-')) {
+        const productId = parseInt(hash.replace('#producto-', ''));
+        if (products.find(p => p.id === productId)) {
+            openProductDetail(productId);
+        }
+    }
+});

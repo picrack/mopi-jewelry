@@ -54,6 +54,17 @@
         </div>
     </section>
 
+    <!-- Página de Detalle del Producto -->
+    <section id="productDetailPage" class="product-detail-page hidden">
+        <div class="container">
+            <button onclick="closeProductDetail()" class="btn-back-catalog">
+                <i data-lucide="arrow-left"></i>
+                <span>Volver al Catálogo</span>
+            </button>
+            <div id="productDetailContent"></div>
+        </div>
+    </section>
+
     <!-- Carrito Lateral -->
     <div id="cartSidebar" class="cart-sidebar hidden">
         <div class="cart-overlay" onclick="closeCart()"></div>
@@ -72,6 +83,17 @@
             <div class="cart-footer" id="cartFooter">
                 <!-- Footer dinámico -->
             </div>
+        </div>
+    </div>
+
+    <!-- Modal de Producto -->
+    <div id="productModal" class="product-modal hidden">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeProductModal()">
+                <i data-lucide="x"></i>
+            </button>
+            <div id="productModalContent"></div>
         </div>
     </div>
 
